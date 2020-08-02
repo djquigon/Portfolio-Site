@@ -1,0 +1,16 @@
+* { margin: 0; padding: 0; }
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background: linear-gradient(#934D51, #085179, #050E58);
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}

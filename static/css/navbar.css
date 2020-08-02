@@ -1,0 +1,41 @@
+* {
+    display: inherit;
+    flex-direction: column;
+}
+
+#icon{
+    height: 100px;
+    width: 99%;
+    mix-blend-mode: luminosity;
+    border: 1px solid #2a6785;
+    border-radius: 30%;
+    filter: brightness(4);
+}
+
+#navbar{
+    background-color: black;
+    opacity: 30%;
+}
+
+/*
+#nav-selected{
+    filter: blur(0px 0px 30px #44c7ff);
+}
+*/
+
+.navLink{
+    padding-top: 40%;
+    padding-bottom: 40%;
+    filter: drop-shadow(0px 0px 25px #44c7ff);
+    transition: 0.3s;
+}
+
+/*
+.navLink img{
+}
+*/
+
+.navLink:hover{
+    filter: drop-shadow(0px 0px 15px #44c7ff) brightness(1.5) saturate(10);
+}
+
