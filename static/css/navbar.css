@@ -10,6 +10,7 @@
     border: 1px solid #2a6785;
     border-radius: 30%;
     filter: brightness(4);
+    background: #202020;
 }
 
 #navbar{
@@ -24,8 +25,8 @@
 */
 
 .navLink{
-    padding-top: 40%;
-    padding-bottom: 40%;
+    padding-top: 50%;
+    padding-bottom: 50%;
     filter: drop-shadow(0px 0px 25px #44c7ff);
     transition: 0.3s;
 }
