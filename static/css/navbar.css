@@ -1,0 +1,79 @@
+* {
+    display: inherit;
+    flex-direction: column;
+}
+
+#icon-container{
+    margin-bottom: 6vw;
+}
+
+#icon-container:hover #icon{
+    opacity: 0.3;
+}
+
+#icon-container:hover #icon-overlay{
+    opacity: 1;
+    filter: drop-shadow(0px 0px 5px #44c7ff) brightness(1.5) saturate(10);
+}
+
+#icon{
+    width: 3vw;
+    height: 3vw;
+    border: 2px ridge #2a6785;
+    border-radius: 50%;
+    filter: brightness(2) drop-shadow(0px 0px 25px #44c7ff);
+    background: #1a3842;
+    transition: .75s ease;
+}
+
+#navbar{
+    background-color: #111;
+    opacity: 75%;
+    box-shadow: 6px 6px 11px 0px rgba(0,0,0,0.6);
+}
+
+#icon-overlay{
+    width: 3vw;
+    height: 3vw;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+  }
+
+/*
+#nav-selected{
+    filter: blur(0px 0px 30px #44c7ff);
+}
+*/
+
+.navLink{
+    padding-bottom: 6vw;
+    filter: drop-shadow(0px 0px 25px #44c7ff);
+    transition: 0.75s;
+}
+
+.navLink img{
+    width: 3vw;
+    height: 5vh;      
+}
+
+.navLink:hover{
+    filter: drop-shadow(0px 0px 15px #44c7ff) brightness(1.5) saturate(10);
+}
+
+.githubLink, .linkedinLink{
+    height:50%;
+    width: 50%;
+    padding-bottom: unset;
+    padding-left: 30%;
+}
+
+.githubLink img{
+    height: 3vh;
+    width: 1.5vw;
+}
+
+.linkedinLink img{
+    height: 3vh;
+    width: 1.5vw;
+}

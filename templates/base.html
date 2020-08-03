@@ -1,0 +1,30 @@
+<!doctype html>
+{% load static %}
+<html>
+
+    <head>
+        {% block head_meta%}
+            <meta http-equiv="Content-Type"
+                content="text/html; charset=utf-8" />
+            <meta http-equiv="Content-Language" value="en-US" />
+            {% block head_meta_viewport %}
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            {% endblock head_meta_viewport %}
+        {% endblock head_meta %}
+        
+        <link rel="stylesheet" href="{% static '/css/base.css' %}"> 
+
+        {% block content_scipts %}
+            {# Template-Specific JS is loaded here #}
+        {% endblock content_scipts %}
+
+    </head>
+
+    <body>
+        {% include "navbar.html" %}
+        {% block content %}
+
+        {% endblock content %}
+    </body>
+
+</html>
