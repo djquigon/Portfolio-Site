@@ -2,7 +2,13 @@
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 <script src="{% static 'js/navbar.js' %}"></script>
 <div id="navbar">
-    <img id = "icon" src="{% static 'images/quicon.png' %}" alt="quicon logo">
+    <div id="icon-container">
+        <img id = "icon" src="{% static 'images/quicon_blue.png' %}" alt="quicon logo">
+        <div id="icon-overlay">
+            <a class="navLink githubLink" href="https://github.com/djquigon"><img src="{% static 'images/Icon awesome-github.png'%}"></a>
+            <a class="navLink linkedinLink" href="https://www.linkedin.com/in/logan-scheid-287753137"><img src="{% static 'images/Icon awesome-linkedin.png'%}"></a>
+        </div>
+    </div>
     <a id= "nav-selected" class = "navLink" href="#"><img src = "{% static 'images/Icon awesome-home@2x.png'%}"></a>
     <a class = "navLink" href="#"><img src = "{% static 'images/Icon awesome-code@2x.png'%}"></a>
     <a class = "navLink" href="#"><img src = "{% static 'images/Icon open-person@2x.png'%}"></a>
