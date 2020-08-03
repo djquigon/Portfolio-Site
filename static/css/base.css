@@ -6,11 +6,27 @@ html, body{
 }
 
 body{
-    background: linear-gradient(#934D51, #085179, #050E58);
+    background: linear-gradient(-45deg, #050E58, #085179,#934D51);
+    background-size: 300% 300%;
+    animation: change 60s ease-in-out infinite;
     display: flex;
     flex-direction: row;
-    position: fixed;
+    position: relative;
+    /*
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: left top;
+    */
+}
+
+@keyframes change{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 }
