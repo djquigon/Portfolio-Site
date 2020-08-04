@@ -154,7 +154,7 @@ function loop() {
   // in order to optimize, I precalculate a smaller speed values depending on speed.x
   // these variables will be used to update the wagging of the tail, the color of the rocket and the scale of the rocket
   var s2 = speed.x/100; // used for the wagging speed and color 
-  var s3 = speed.x/475; // used for the scale
+  var s3 = speed.x/500; // used for the scale
   
   // I use an angle that I increment, and then use its cosine and sine to make the tail wag in a cyclic movement. The speed of the wagging depends on the global speed
   angleTail += s2+10;
