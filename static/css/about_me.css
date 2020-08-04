@@ -3,3 +3,23 @@
     width: 100%;
     position: absolute;
 }
+
+#content canvas{
+    position: inherit;
+}
+
+#about-me-info{
+    text-align: center;
+    margin-left: 33%;
+    margin-right: 33%;
+    background: black;
+    opacity: 70%;
+    margin-top: 10%;
+    border-radius: 25px;
+    box-shadow: 6px 6px 11px 0px rgba(0,0,0,0.6);
+}
+
+#about-me-info h1, h3{
+    color: #ddb78d;
+    padding: 5%;
+}

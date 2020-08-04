@@ -52,7 +52,7 @@ function init(){
     aspectRatio,
     nearPlane,
     farPlane);
-  camera.position.z = 1000;  
+  camera.position.z = 1500;  
   
   
   //create the renderer 
