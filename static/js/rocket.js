@@ -58,7 +58,7 @@ function init(){
   //create the renderer 
   renderer = new THREE.WebGLRenderer({alpha: true, antialias: true });
   renderer.setSize(WIDTH, HEIGHT);
-  container = document.getElementById('content');
+  container = document.getElementById('rocket-container');
   container.appendChild(renderer.domElement);
    
   /*
