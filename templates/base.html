@@ -1,8 +1,9 @@
 <!doctype html>
-{% load static %}
+{% load static %} <!--can proabbaly take this out-->
 <html>
 
     <head>
+        <title style="display: none;">Logan S. - {% block title %} {% endblock title %}</title>
         {% block head_meta%}
             <meta http-equiv="Content-Type"
                 content="text/html; charset=utf-8" />
@@ -11,20 +12,24 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
             {% endblock head_meta_viewport %}
         {% endblock head_meta %}
-        
-        <link rel="stylesheet" href="{% static '/css/base.css' %}"> 
 
-        {% block content_scipts %}
+        <link rel="stylesheet" href="{% static '/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+        {% block css %}
+            {# Template-Specific css is loaded here #}
+        {% endblock css %}
+
+        {% block scripts %}
             {# Template-Specific JS is loaded here #}
-        {% endblock content_scipts %}
+        {% endblock scripts %}
 
     </head>
 
     <body>
-        {% include "navbar.html" %}
         {% block content %}
-
+            {# Template-Specific html is loaded here #}
         {% endblock content %}
+        {% include "navbar.html" %} <!--load navbar ontop of everything-->
     </body>
 
 </html>

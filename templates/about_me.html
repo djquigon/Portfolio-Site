@@ -5,9 +5,15 @@
     About Me
 {%endblock title%}
 
-{%block content_css%}
-{%endblock content_css%}
+{%block css %}
+<link rel="stylesheet" href="{% static '/css/about_me.css' %}"> 
+{%endblock css %}
+
+{%block scripts%}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+    <script type="text/javascript" src="{% static '/js/rocket.js' %}" defer></script>
+{%endblock scripts%}
 
 {% block content %}
-
+    <div id="content"></div>
 {% endblock content %}
