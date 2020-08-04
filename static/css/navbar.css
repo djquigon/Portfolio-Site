@@ -30,6 +30,8 @@
     background-color: #111;
     opacity: 75%;
     box-shadow: 6px 6px 11px 0px rgba(0,0,0,0.6);
+    position: absolute;
+    height: 100%;
 }
 
 #icon-overlay{
