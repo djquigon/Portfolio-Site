@@ -18,8 +18,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from portfolio import views
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico'))),
     path('admin/', admin.site.urls),
     path('home/', views.home, name = 'home'),
     path('softwarework/', views.software_work, name = 'software_work'),
