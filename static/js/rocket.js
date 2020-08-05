@@ -171,7 +171,7 @@ function loop() {
   rocketTop.material.color.setRGB(rvalue,gvalue,bvalue);
   
   //scale update depending on the speed => make the rocket struggling to progress
-  rocket.scale.set(0.75+s3,0.75-s3,0.75-s3);
+  rocket.scale.set(0.5+s3,0.65-s3,0.5-s3);
   
   // particles update 
   for (var i=0; i<flyingParticles.length; i++){
