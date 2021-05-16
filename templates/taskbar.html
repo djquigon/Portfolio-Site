@@ -1,0 +1,113 @@
+{% load static %}
+
+{%block content_css%}
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css'>
+<link rel="stylesheet" href="{%  static 'css/win98.min.css' %}">
+{%endblock content_css%}
+
+{% block content %}
+<body class='win98'>
+<div class="block-left" style="width: 400px">
+    <div class="menu">
+      <div class="menu-sidebar">
+        <div class="headline">
+          <strong>Windows</strong> 98
+        </div>
+      </div>
+      <ul class='menu-content'>
+        <li class='item folder'>
+          <img class='icon' src="{%  static 'images/icons/programs.gif' %}">
+          <em>P</em>rograms
+          <ul class='menu-content'>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/ie.png' %}">
+                Internet Explorer
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/msword.png' %}">
+                Microsoft Word
+            </li>
+            <li class="item">
+                <img class='icon' src="{%  static 'images/icons/mspp.png' %}">
+                Microsoft Powerpoint
+            </li>
+            <li class="item">
+                <img class='icon' src="{%  static 'images/icons/mspaint.png' %}">
+                Microsoft Paint
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/aim.png' %}">
+                AIM
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/rocket.png' %}">
+                ?????????????
+            </li>
+          </ul>
+        </li>
+        <li class='item folder'>
+          <img class='icon' src="{%  static 'images/icons/msdos.png' %}">
+          G<em>a</em>mes
+          <ul class='menu-content'>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/solitaire.png' %}">
+              Solitaire
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/pacman.png' %}">
+              Pacman
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/doom.png' %}">
+              Doom
+            </li>
+          </ul>
+        </li>
+        <li class='item folder'>
+          <img class='icon' src="{%  static 'images/icons/documents.gif' %}">
+          <em>D</em>ocuments
+          <ul class='menu-content'>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/txt.gif' %}">
+              favbands.txt
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/txt.gif' %}">
+              passwords.txt
+            </li>
+            <li class="item">
+                <img class='icon' src="{%  static 'images/icons/txt.gif' %}">
+                asdfzmtihlsjfhwi.txt
+            </li>
+          </ul>
+        </li>
+        <li class='item folder'>
+          <img class='icon' src="{%  static 'images/icons/settings.gif' %}">
+          <em>S</em>ettings
+        </li>
+        <li class='item folder'>
+          <img class='icon' src="{%  static 'images/icons/find.gif' %}">
+          <em>F</em>ind
+        </li>
+        <li class='item'>
+          <img class='icon' src="{%  static 'images/icons/help.gif' %}">
+          <em>H</em>elp
+        </li>
+        <li class='item'>
+          <img class='icon' src="{%  static 'images/icons/run.gif' %}">
+          <em>R</em>un...
+        </li>
+        <li class='divider'></li>
+        <li class='item'>
+          <img class='icon' src="{%  static 'images/icons/logoff.gif' %}">
+          <em>L</em>og Off Win98...
+        </li>
+        <li class='item'>
+          <img class='icon' src="{%  static 'images/icons/shutdown.gif' %}">
+          Sh<em>u</em>t Down...
+        </li>
+      </ul>
+    </div>
+</div>
+</body>
+{% endblock content %}

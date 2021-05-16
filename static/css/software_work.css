@@ -1,0 +1,21 @@
+#works-container{
+    width: inherit;
+    height: inherit;
+    flex-direction: column;
+    margin-left: 3vw;
+}
+
+.worksRow{
+    flex-direction: row;
+    height: 50%;
+}
+
+.work{
+    background-color: black;
+    opacity: 50%;
+    height: 25%;
+    width: 20%;
+    flex-direction: column;
+    margin: 1%;
+    border-radius: 5%;
+}

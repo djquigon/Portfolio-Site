@@ -35,3 +35,11 @@ def contact_me(request):
     }
 
     return render(request, 'contact_me.html', context)
+
+def windows(request):
+    context = {
+
+    }
+
+    return render(request, 'windows.html', context)
+    

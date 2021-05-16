@@ -1,0 +1,31 @@
+{% load static%}
+
+{%block title%}
+    windows
+{%endblock title%}
+
+{%block content_css%}
+<link rel="stylesheet" href="{% static 'css/windows.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/98.css" >
+<link rel="stylesheet" href="{%  static 'css/win98.min.css' %}">
+{%endblock content_css%}
+
+{% block content %}
+<div class="block-centered" style="width: 400px">
+<div class="window" style="margin: 32px; width: 250px">
+    <div class="title-bar">
+      <div class="title-bar-text">
+        Welcome
+      </div>
+    </div>
+    <div class="window-body">
+      <p><b>Hey there! Welcome to my portfolio site!</b></p>
+      <br>
+      <p>Navigating around should feel pretty self-explanatory ;) Be on the lookout for some hidden easter eggs!</p>
+      <br>
+      <p>Let me know what you think of the design down below!</p>
+    </div>
+  </div>
+</div>
+{% include "taskbar.html" %}
+{% endblock content %}

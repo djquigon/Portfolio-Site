@@ -1,12 +1,11 @@
 <!doctype html>
-{% load static %} <!--can proabbaly take this out-->
+{% load static %}
 <html>
 
     <head>
         <title style="display: none;">Logan Scheid - {% block title %} {% endblock title %}</title>
         {% block head_meta%}
-            <meta http-equiv="Content-Type"
-                content="text/html; charset=utf-8" />
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
             <meta http-equiv="Content-Language" value="en-US" />
             {% block head_meta_viewport %}
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
