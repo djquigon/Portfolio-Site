@@ -1,0 +1,70 @@
+/* JQuery ui icom removal */ 
+.ui-icon { background-image: url("") !important; }
+
+.startbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 40px;
+    width: 100vw;
+    background-color: #bdbebd;
+    border-top: 2px solid white;
+    /*padding: 3px;*/
+  }
+  
+  #startbutton {
+    float: left; 
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: 70px;
+    height: 29px;
+    text-align: right;
+    font-family: tahoma;
+    padding: 4px;
+    background-image: url("/static/images//icons/98logo.png");
+    /*background-image: url("/static/images/quicon.png");*/
+    background-size: auto 70%;
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #time-icon {
+      float: left;
+  }
+  
+  .startbutton-off {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  .startbutton-on {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  .time {
+    display: inline-block;
+    height: 70%;
+    width: 5%;
+    float: right;
+    text-align: center;
+    padding: 4px;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    font-size: 1.2em;
+    text-align: right;
+  }
+
+  #menu{
+    display: none;
+    position: absolute;
+    bottom: 4.3%;
+  }

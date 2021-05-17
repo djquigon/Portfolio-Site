@@ -1,14 +1,29 @@
 {% load static %}
 
 {%block content_css%}
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css'>
 <link rel="stylesheet" href="{%  static 'css/win98.min.css' %}">
+<link rel="stylesheet" href="{%  static 'css/taskbar.css' %}">
 {%endblock content_css%}
+
+{%block scripts%}
+    <script type="text/javascript" src="{% static 'js/taskbar.js' %}"></script>
+{%endblock scripts%}
 
 {% block content %}
 <body class='win98'>
-<div class="block-left" style="width: 400px">
-    <div class="menu">
+    <div class="startbar">
+      <div id="startbutton" class="startbutton-off">
+        <b>Start</b>
+      </div>
+      <div class="time">
+          <img class='icon' id='time-icon' src="{%  static 'images/icons/volume.png' %}">
+          <p>??:?? AM</p>
+      </div>
+    </div>
+    <div class="menu" id = "menu">
       <div class="menu-sidebar">
         <div class="headline">
           <strong>Windows</strong> 98
@@ -108,6 +123,5 @@
         </li>
       </ul>
     </div>
-</div>
 </body>
 {% endblock content %}
