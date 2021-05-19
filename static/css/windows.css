@@ -1,9 +1,34 @@
-/*body{
-}*/
+/*
+body{
+    font-family: "Pixelated MS Sans Serif", Tahoma;
+}
+*/
+.block-centered{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+}
+
+#welcome{
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+#rating-bar{
+    margin-bottom: 10%;
+}
+
+/*
+.block-centered *{
+    margin-bottom: 5%;
+}
+*/
 
 #spinning-quigon{
     text-align: center;
-    margin-top: 5%;
 }
 
 .desktop{
@@ -40,5 +65,44 @@
 }
 
 .window{
-    margin-top: 4vh;
+    margin-top: 3vh;
+}
+
+.window-body {
+    text-align: center;
+}
+
+#fullscreen-button {
+    font-family: "Pixelated MS Sans Serif", Tahoma;
+}
+
+/*
+#dosbox {
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    background-color: #c0c0c0;
+}
+*/
+
+#dosbox *{
+    margin-bottom: 0%;
+    font-family: "Pixelated MS Sans Serif", Tahoma;
+    color: #1034a6;
+}
+
+.dosbox-button{
+    width: 20%;
+}
+
+.dosbox-container { 
+    width: 640px; height: 400px; 
+}
+
+.dosbox-start { 
+    top: 75%;
+}
+
+.dosbox-container > .dosbox-overlay { 
+    background: url('/static/images/icons/spinning_quigon.gif') no-repeat;
+    background-position: center;
+    background-color: black;
 }

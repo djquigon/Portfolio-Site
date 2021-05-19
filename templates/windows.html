@@ -41,9 +41,8 @@
         <p>Medium.exe</p>
       </div>
     </div>
-<div class="block-centered" style="width: 400px">
-  
-<div class="window">
+<div class="block-centered">
+<div class="window" id="welcome">
     <div class="title-bar">
       <div class="title-bar-text">
         Welcome
@@ -68,11 +67,65 @@
       <p>Let me know what you think of the design down below!</p>
     </div>
   </div>
+
+
+  <div class="window">
+    <div class="title-bar">
+      <div class="title-bar-text">Rating</div>
+    </div>
+    <div class="window-body">
+      <p>Leave a rating!</p>
+      <div class="field-row" id="rating-bar">
+        <label for="range22">Rating:</label>
+        <label for="range23">0</label>
+        <input id="range23" type="range" min="0" max="10" value="5" />
+        <label for="range24">10</label>
+      </div>
+      <button>Submit Rating</button>
+    </div>
+  </div>
+
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text">Steam98.exe</div>
+  </div>
+  <div class="window-body">
+    <div id="dosbox"></div>
+    <br/>
+    <button class="dosbox-button" id ="fullscreen-button" onclick="dosbox.requestFullScreen();">Make Fullscreen</button>
+    <button class="dosbox-button">Exit Game</button>   
+    <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+    <script type="text/javascript">
+      var dosbox = new Dosbox({
+        id: "dosbox",
+        onload: function (dosbox) {
+          /*dosbox.run("{% static '/assets/games/DIGGER.zip' %}", "./DIGGER.COM");*/
+          dosbox.run("{% static '/assets/games/DOOM.zip' %}", "./DOOM.EXE");
+          /*dosbox.run("{% static '/assets/games/DAGGERFALL.zip' %}", "./DAGGER/DAG213.EXE");*/
+          /*dosbox.run("{% static '/assets/games/DARKFORCES.zip' %}", "./DF.EXE");*/
+
+        },
+        onrun: function (dosbox, app) {
+          console.log("App '" + app + "' is being ran");
+        }
+      });
+    </script>
+  </div>
+  <div class="status-bar">
+    <p class="status-bar-field">Press F1 for help</p>
+    <p class="status-bar-field">Pick a game from the Games folder in the Start menu</p>
+    <p class="status-bar-field">CPU Usage: 99%</p>
+  </div>
 </div>
-<div id="spinning-quigon">
-  <img src="{% static 'images/icons/spinning_quigon.gif' %}">
 </div>
 </div>
 {% include "taskbar.html" %}
 </body>
 {% endblock content %}
+
+<head>
+
+</head>
+<body>
+  
+</body>
