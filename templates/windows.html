@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="https://unpkg.com/98.css" >
 {%endblock content_css%}
 
+{%block scripts%}
+    <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
+    <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+{%endblock scripts%}
+
 {% block content %}
 <body>
   <div class="desktop">
@@ -68,23 +73,6 @@
     </div>
   </div>
 
-
-  <div class="window">
-    <div class="title-bar">
-      <div class="title-bar-text">Rating</div>
-    </div>
-    <div class="window-body">
-      <p>Leave a rating!</p>
-      <div class="field-row" id="rating-bar">
-        <label for="range22">Rating:</label>
-        <label for="range23">0</label>
-        <input id="range23" type="range" min="0" max="10" value="5" />
-        <label for="range24">10</label>
-      </div>
-      <button>Submit Rating</button>
-    </div>
-  </div>
-
 <div class="window">
   <div class="title-bar">
     <div class="title-bar-text">Steam98.exe</div>
@@ -92,18 +80,25 @@
   <div class="window-body">
     <div id="dosbox"></div>
     <br/>
-    <button class="dosbox-button" id ="fullscreen-button" onclick="dosbox.requestFullScreen();">Make Fullscreen</button>
-    <button class="dosbox-button">Exit Game</button>   
-    <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
-    <script type="text/javascript">
+    <button class="dosbox-button" onclick="dosbox.requestFullScreen();">Make Fullscreen</button>
+    <button class="dosbox-button" onclick="exitGame();">Exit Game</button> 
+    <script type="text/javascript"> 
       var dosbox = new Dosbox({
         id: "dosbox",
         onload: function (dosbox) {
           /*dosbox.run("{% static '/assets/games/DIGGER.zip' %}", "./DIGGER.COM");*/
           dosbox.run("{% static '/assets/games/DOOM.zip' %}", "./DOOM.EXE");
-          /*dosbox.run("{% static '/assets/games/DAGGERFALL.zip' %}", "./DAGGER/DAG213.EXE");*/
+          /*dosbox.run("{% static '/assets/games/ARENA.zip' %}", "./ARENA.BAT");*/
+          /*dosbox.run("{% static '/assets/games/MK3.zip' %}", "./MK3.EXE");*/
           /*dosbox.run("{% static '/assets/games/DARKFORCES.zip' %}", "./DF.EXE");*/
-
+          /*dosbox.run("{% static '/assets/games/DUKE3D.zip' %}", "./DUKE3D.EXE");*/
+          /*dosbox.run("{% static '/assets/games/SUPERSTREETFIGHTER2T.zip' %}", "./SF2TURBO.EXE");*/
+          /*dosbox.run("{% static '/assets/games/SYSTEMSHOCK.zip' %}", "./SSHOCK.EXE");*/
+          /*dosbox.run("{% static '/assets/games/TETRIS.zip' %}", "./SABA.EXE");*/
+          /*dosbox.run("{% static '/assets/games/WOLF3D.zip' %}", "./WOLF3D.EXE");*/
+          /*dosbox.run("{% static '/assets/games/PACMAN.zip' %}", "./MSPAC.EXE");*/
+          /*dosbox.run("{% static '/assets/games/SOLITAIRE.zip' %}", "./SOLSUITE.EXE");*/
+          /*dosbox.run("{% static '/assets/games/MARIO.zip' %}", "./MARIO.EXE");*/
         },
         onrun: function (dosbox, app) {
           console.log("App '" + app + "' is being ran");
@@ -115,6 +110,21 @@
     <p class="status-bar-field">Press F1 for help</p>
     <p class="status-bar-field">Pick a game from the Games folder in the Start menu</p>
     <p class="status-bar-field">CPU Usage: 99%</p>
+  </div>
+</div>
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text">Rating</div>
+  </div>
+  <div class="window-body">
+    <p>Leave a rating!</p>
+    <div class="field-row" id="rating-bar">
+      <label for="range22">Rating:</label>
+      <label for="range23">0</label>
+      <input id="range23" type="range" min="0" max="10" value="5" />
+      <label for="range24">10</label>
+    </div>
+    <button>Submit Rating</button>
   </div>
 </div>
 </div>
