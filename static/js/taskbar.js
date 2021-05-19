@@ -1,3 +1,4 @@
+/*
 function updateClock() {
     var time = new Date();
     var hours = time.getHours();
@@ -20,7 +21,7 @@ function updateClock() {
     var currentTime = hours + ":" + minutes + " " + suffix;
     $(".time").html(currentTime);
   }
-
+*/
   var getTopZIndex = function() {
     var allDivs = $('.window');
     var topZindex = 0;
@@ -162,11 +163,7 @@ function updateClock() {
   }
   
   $(document).ready(function() {
-  
-    setInterval(updateClock(), 1000);
     //start up music
-    var audio = new Audio('http://www.winhistory.de/more/winstart/ogg/win98.ogg');
-    //audio.play();
     // toggle start menu 
     $("#startbutton").click(function() {
       $("#startbutton").toggleClass("startbutton-on");
@@ -175,6 +172,7 @@ function updateClock() {
   
     // close start menu if desktop clicked
     $(".desktop").click(function() {
+      /*alert("hi");*/
       // Depress windows start button animation 
       $("#startbutton").removeClass("startbutton-on");
       // hide start menu 

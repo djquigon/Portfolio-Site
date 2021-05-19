@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css'>
-<link rel="stylesheet" href="{%  static 'css/win98.min.css' %}">
+<!--<link rel="stylesheet" href="{%  static 'css/win98.min.css' %}">-->
 <link rel="stylesheet" href="{%  static 'css/taskbar.css' %}">
 {%endblock content_css%}
 
@@ -13,12 +13,14 @@
 {%endblock scripts%}
 
 {% block content %}
-<body class='win98'>
+<div class='taskbar'>
     <div class="startbar">
       <div id="startbutton" class="startbutton-off">
         <b>Start</b>
       </div>
       <div class="time">
+          <img class='icon' id='time-icon' src="{%  static 'images/icons/sun.png' %}">
+          <img class='icon' id='time-icon' src="{%  static 'images/icons/timedate.png' %}">
           <img class='icon' id='time-icon' src="{%  static 'images/icons/volume.png' %}">
           <p>??:?? AM</p>
       </div>
@@ -37,6 +39,10 @@
             <li class="item">
               <img class='icon' src="{%  static 'images/icons/ie.png' %}">
                 Internet Explorer
+            </li>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/msn.png' %}">
+                MSN
             </li>
             <li class="item">
               <img class='icon' src="{%  static 'images/icons/msword.png' %}">
@@ -123,5 +129,5 @@
         </li>
       </ul>
     </div>
-</body>
+  </div>
 {% endblock content %}
