@@ -17,34 +17,34 @@
 <body>
   <div class="desktop">
     <div id="desktop-icons">
-      <div class="desktop-icon">
+      <a class="desktop-icon">
         <img src="{% static 'images/icons/logan.png' %}">
         <p>Logan.exe</p>
-      </div>
-      <div class="desktop-icon">
+      </a>
+      <a class="desktop-icon">
         <img src="{% static 'images/icons/projects.png' %}">
         <p>Projects.exe</p>
-      </div>
-      <div class="desktop-icon">
+      </a>
+      <a class="desktop-icon">
         <img src="{% static 'images/icons/resume.png' %}">
         <p>Resume.exe</p>
-      </div>
-      <div class="desktop-icon">
+      </a>
+      <a class="desktop-icon">
         <img src="{% static 'images/icons/contactme.png' %}">
         <p>Contact_Me.exe</p>
-      </div>
-      <div class="desktop-icon">
+      </a>
+      <a class="desktop-icon" href="https://www.linkedin.com/in/logan-scheid-287753137" target="_blank">
         <img src="{% static 'images/icons/linkedin.png' %}">
-        <p>LinkedIn.exe</p>
-      </div>
-      <div class="desktop-icon">
+        <p>LinkedIn.html</p>
+      </a>
+      <a class="desktop-icon" href="https://github.com/djquigon" target="_blank">
         <img src="{% static 'images/icons/github.png' %}">
-        <p>Github.exe</p>
-      </div>
-      <div class="desktop-icon">
+        <p>Github.html</p>
+      </a>
+      <a class="desktop-icon" href="https://medium.com/@scheidlogan" target="_blank">
         <img src="{% static 'images/icons/medium.png' %}">
-        <p>Medium.exe</p>
-      </div>
+        <p>Medium.html</p>
+      </a>
     </div>
 <div class="block-centered">
 <div class="window" id="welcome">
@@ -69,7 +69,7 @@
       <p style="margin-top: 0;">
         &nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspw w  
       </p>
-      <p>Let me know what you think of the design down below!</p>
+      <p>Let me know what you think of the design by leaving a rating and feedback!</p>
     </div>
   </div>
 
@@ -78,37 +78,17 @@
     <div class="title-bar-text">Steam98.exe</div>
   </div>
   <div class="window-body">
-    <div id="dosbox"></div>
-    <br/>
-    <button class="dosbox-button" onclick="dosbox.requestFullScreen();">Make Fullscreen</button>
-    <button class="dosbox-button" onclick="exitGame();">Exit Game</button> 
-    <script type="text/javascript"> 
-      var dosbox = new Dosbox({
-        id: "dosbox",
-        onload: function (dosbox) {
-          /*dosbox.run("{% static '/assets/games/DIGGER.zip' %}", "./DIGGER.COM");*/
-          dosbox.run("{% static '/assets/games/DOOM.zip' %}", "./DOOM.EXE");
-          /*dosbox.run("{% static '/assets/games/ARENA.zip' %}", "./ARENA.BAT");*/
-          /*dosbox.run("{% static '/assets/games/MK3.zip' %}", "./MK3.EXE");*/
-          /*dosbox.run("{% static '/assets/games/DARKFORCES.zip' %}", "./DF.EXE");*/
-          /*dosbox.run("{% static '/assets/games/DUKE3D.zip' %}", "./DUKE3D.EXE");*/
-          /*dosbox.run("{% static '/assets/games/SUPERSTREETFIGHTER2T.zip' %}", "./SF2TURBO.EXE");*/
-          /*dosbox.run("{% static '/assets/games/SYSTEMSHOCK.zip' %}", "./SSHOCK.EXE");*/
-          /*dosbox.run("{% static '/assets/games/TETRIS.zip' %}", "./SABA.EXE");*/
-          /*dosbox.run("{% static '/assets/games/WOLF3D.zip' %}", "./WOLF3D.EXE");*/
-          /*dosbox.run("{% static '/assets/games/PACMAN.zip' %}", "./MSPAC.EXE");*/
-          /*dosbox.run("{% static '/assets/games/SOLITAIRE.zip' %}", "./SOLSUITE.EXE");*/
-          /*dosbox.run("{% static '/assets/games/MARIO.zip' %}", "./MARIO.EXE");*/
-        },
-        onrun: function (dosbox, app) {
-          console.log("App '" + app + "' is being ran");
-        }
-      });
-    </script>
+    <div id="game-container"class="window">
+    <div id="game-screen">
+    <div id="dosbox"><span id="game" class="no-game"></span></div>
   </div>
+    <button disabled class="dosbox-button" onclick="dosbox.requestFullScreen;">Make Fullscreen</button>
+    <button disabled class="dosbox-button" onclick="ejectGame();">Eject Game</button> 
+  </div>
+</div>
   <div class="status-bar">
     <p class="status-bar-field">Press F1 for help</p>
-    <p class="status-bar-field">Pick a game from the Games folder in the Start menu</p>
+    <p id="game-title" class="status-bar-field">Pick a game from the Games folder in the Start menu</p>
     <p class="status-bar-field">CPU Usage: 99%</p>
   </div>
 </div>

@@ -55,6 +55,7 @@ body{
 
 .desktop-icon{
     text-align: center;
+    text-decoration: none;
     font-family: "Pixelated MS Sans Serif", Tahoma;
     color:#ffffff;
     margin-bottom: 4vh;
@@ -87,6 +88,8 @@ body{
 
 .dosbox-button{
     width: 20%;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
 }
 
 .dosbox-container { 
@@ -100,9 +103,22 @@ body{
 
 .dosbox-start { 
     top: 75%;
+    display: none;
 }
 
 .dosbox-container > .dosbox-overlay { 
+    background: url('/static/images/icons/spinning_quigon.gif') no-repeat;
+    background-position: center;
+    background-color: black;
+}
+
+#game-container {
+    margin-top: 0;
+}
+
+#game-screen {
+    height:400px;
+    width: 640px;
     background: url('/static/images/icons/spinning_quigon.gif') no-repeat;
     background-position: center;
     background-color: black;
