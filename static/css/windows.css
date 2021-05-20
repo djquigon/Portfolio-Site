@@ -21,12 +21,6 @@ body{
     margin-bottom: 10%;
 }
 
-/*
-.block-centered *{
-    margin-bottom: 5%;
-}
-*/
-
 #spinning-quigon{
     text-align: center;
 }
@@ -40,7 +34,6 @@ body{
     background-position: center;
     overflow: hidden;
     position: fixed;
-    /*z-index: -999;*/
 }
 
 #desktop-icons{

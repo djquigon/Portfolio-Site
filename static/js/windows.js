@@ -12,6 +12,7 @@ function updateGame(game){
     }
     $("#game").attr("class", game);
     $("#game-title").text(game);
+    $("#menu").css('display', 'none');
     var dosbox = new Dosbox({
         id: "dosbox",
         onload: function (dosbox) {
@@ -40,4 +41,3 @@ function updateGame(game){
     //un disable buttons
     $('.dosbox-button').prop('disabled', false);
 }
-
