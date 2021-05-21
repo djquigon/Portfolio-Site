@@ -10,7 +10,7 @@
 
 {%block scripts%}
     <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
-    <script type="text/javascript" src="https://js-dos.com/cdn/js-dos-api.js"></script>
+    <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
 {%endblock scripts%}
 
 {% block content %}
@@ -33,13 +33,13 @@
         <img src="{% static 'images/icons/contactme.png' %}">
         <p>Contact_Me.exe</p>
       </a>
-      <a class="desktop-icon" href="https://www.linkedin.com/in/logan-scheid-287753137" target="_blank">
-        <img src="{% static 'images/icons/linkedin.png' %}">
-        <p>LinkedIn.html</p>
-      </a>
       <a class="desktop-icon" href="https://github.com/djquigon" target="_blank">
         <img src="{% static 'images/icons/github.png' %}">
         <p>Github.html</p>
+      </a>
+      <a class="desktop-icon" href="https://www.linkedin.com/in/logan-scheid-287753137" target="_blank">
+        <img src="{% static 'images/icons/linkedin.png' %}">
+        <p>LinkedIn.html</p>
       </a>
       <a class="desktop-icon" href="https://medium.com/@scheidlogan" target="_blank">
         <img src="{% static 'images/icons/medium.png' %}">
@@ -80,10 +80,10 @@
   <div class="window-body">
     <div id="game-container"class="window">
     <div id="game-screen">
-    <div id="dosbox"><span id="game" class="no-game"></span></div>
+      <canvas id="jsdos"><span id="game" class="no-game"></span></canvas>
   </div>
-    <button disabled class="dosbox-button" onclick="dosbox.requestFullScreen;">Make Fullscreen</button>
-    <button disabled class="dosbox-button" onclick="ejectGame();">Eject Game</button> 
+    <button disabled class="dosbox-button" onclick="ci.fullscreen()">Make Fullscreen</button>
+    <button disabled class="dosbox-button" onclick="ejectGame()">Eject Game</button> 
   </div>
 </div>
   <div class="status-bar">
