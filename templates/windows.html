@@ -3,15 +3,19 @@
 {%block title%}
 {%endblock title%}
 
-{%block content_css%}
-<link rel="stylesheet" href="{% static 'css/windows.css' %}">
-<link rel="stylesheet" href="https://unpkg.com/98.css" >
-{%endblock content_css%}
+<head>
+  <title>Logan Scheid</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+  {%block content_css%}
+  <link rel="stylesheet" href="{% static 'css/windows.css' %}">
+  <link rel="stylesheet" href="https://unpkg.com/98.css" >
+  {%endblock content_css%}
 
-{%block scripts%}
-    <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
-    <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
-{%endblock scripts%}
+  {%block scripts%}
+      <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
+      <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  {%endblock scripts%}
+</head>
 
 {% block content %}
 <body>
