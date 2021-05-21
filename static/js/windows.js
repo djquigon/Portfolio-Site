@@ -42,6 +42,7 @@ function submitRating(){
 
 function displayGameHelp(){
     // to be implemented
+    window.alert("Game help");
 }
 
 function openAboutMe(){
