@@ -34,3 +34,28 @@ function startGame(game){
     //un disable buttons
     $('.dosbox-button').prop('disabled', false);
 }
+
+function submitRating(){
+    $('#submit-rating').prop('disabled', true);
+    $('#rating-text').text("Duly noted, thanks!");
+}
+
+function displayGameHelp(){
+    // to be implemented
+}
+
+function openAboutMe(){
+    window.alert("About Me");
+}
+
+function openProjects(){
+    window.alert("Projects");
+}
+
+function openResume(){
+    window.alert("Resume");
+}
+
+function openContactMe(){
+    window.alert("Contact Me");
+}

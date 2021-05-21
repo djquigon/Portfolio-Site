@@ -17,22 +17,22 @@
 <body>
   <div class="desktop">
     <div id="desktop-icons">
-      <a class="desktop-icon">
+      <div class="desktop-icon" ondblclick="openAboutMe()">
         <img src="{% static 'images/icons/logan.png' %}">
         <p>Logan.exe</p>
-      </a>
-      <a class="desktop-icon">
+      </div>
+      <div class="desktop-icon" ondblclick="openProjects()">
         <img src="{% static 'images/icons/projects.png' %}">
         <p>Projects.exe</p>
-      </a>
-      <a class="desktop-icon">
+      </div>
+      <div class="desktop-icon" ondblclick="openResume()">
         <img src="{% static 'images/icons/resume.png' %}">
         <p>Resume.exe</p>
-      </a>
-      <a class="desktop-icon">
+      </div>
+      <div class="desktop-icon" ondblclick="openContactMe()">
         <img src="{% static 'images/icons/contactme.png' %}">
         <p>Contact_Me.exe</p>
-      </a>
+      </div>
       <a class="desktop-icon" href="https://github.com/djquigon" target="_blank">
         <img src="{% static 'images/icons/github.png' %}">
         <p>Github.html</p>
@@ -48,7 +48,8 @@
     </div>
 <div class="block-centered">
 <div class="window" id="welcome">
-    <div class="title-bar">
+    <div class="title-bar" id="intro-title-bar">
+      <img src="/static/images/icons/intro.png"> 
       <div class="title-bar-text">
         Welcome
       </div>
@@ -74,8 +75,12 @@
   </div>
 
 <div class="window">
-  <div class="title-bar">
+  <div class="title-bar" id="steam-title-bar">
+    <img src="/static/images/icons/steam.png"> 
     <div class="title-bar-text">Steam98.exe</div>
+    <div class="title-bar-controls">
+      <button id="game-help" aria-label="Help" onclick="displayGameHelp()"></button>
+    </div>
   </div>
   <div class="window-body">
     <div id="game-container"class="window">
@@ -93,18 +98,19 @@
   </div>
 </div>
 <div class="window">
-  <div class="title-bar">
+  <div class="title-bar" id="rating-title-bar">
+    <img src="/static/images/icons/rating.png">
     <div class="title-bar-text">Rating</div>
   </div>
   <div class="window-body">
-    <p>Leave a rating!</p>
+    <p id="rating-text">Leave a rating!</p>
     <div class="field-row" id="rating-bar">
       <label for="range22">Rating:</label>
       <label for="range23">0</label>
       <input id="range23" type="range" min="0" max="10" value="5" />
       <label for="range24">10</label>
     </div>
-    <button>Submit Rating</button>
+    <button id="submit-rating" onclick="submitRating()">Submit Rating</button>
   </div>
 </div>
 </div>

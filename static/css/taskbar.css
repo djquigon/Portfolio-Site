@@ -217,12 +217,17 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    display: block;
-    height: 4vh;
+    height:  39.5px;
     width: 100vw;
     background-color: #bdbebd;
     border-top: 2px solid white;
     /*padding: 3px;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
   }
   
   #startbutton {
@@ -230,21 +235,24 @@
     display: inline-block;
     text-decoration: none;
     color: black;
-    width: 70px;
-    height: 29px;
+    width: 65px;
+    height: 55%;
     text-align: right;
-    font-family: tahoma;
+    font-family: "Pixelated MS Sans Serif", Tahoma;
+    font-size: medium;
     padding: 4px;
     background-image: url("/static/images//icons/98logo.png");
     /*background-image: url("/static/images/quicon.png");*/
     background-size: auto 70%;
     background-position: 5% 50%;
     background-repeat: no-repeat;
+    margin-left: .2%;
   }
-/*
-  #time-icon {
+
+  .clippy-icon{
+    cursor: pointer;
   }
-  */
+
   .startbutton-off {
     border-top: 2px solid white;
     border-left: 2px solid white;
@@ -266,8 +274,8 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    height: 70%;
-    width: 7.5%;
+    height: 50%;
+    width: 160px;
     float: right;
     padding: 4px;
     border-top: 2px solid grey;
@@ -276,10 +284,11 @@
     border-right: 2px solid white;
     font-size: 1.2em;
     text-align: right;
+    margin-right: .2%;
   }
 
   #menu{
     display: none;
     position: absolute;
-    bottom: 4.3vh;
+    bottom: 40px;
   }
