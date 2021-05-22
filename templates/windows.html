@@ -16,6 +16,8 @@
   <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
   <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
+      <script type="text/javascript" src="{% static '/js/three.min.js' %}"></script>
+      <script type="text/javascript" src="{% static '/js/rocket.js' %}" defer></script>
   {%endblock scripts%}
 </head>
 
@@ -23,19 +25,19 @@
 <body>
   <div class="desktop">
     <div id="desktop-icons">
-      <div id="about-me-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
+      <div id="about-me-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/logan.png' %}">
         <p>Logan.exe</p>
       </div>
-      <div id="projects-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
+      <div id="projects-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/projects.png' %}">
         <p>Projects.exe</p>
       </div>
-      <div id="my-resume-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
+      <div id="my-resume-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/resume.png' %}">
         <p>My_Resume.exe</p>
       </div>
-      <div id="contact-me-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
+      <div id="contact-me-icon" class="desktop-icon" onclick="highlightIcon(this)" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/contactme.png' %}">
         <p>Contact_Me.exe</p>
       </div>
@@ -122,6 +124,7 @@
 </div>
 </div>
 {% include "taskbar.html" %}
+"<div id='rocket-container'></div>"
 </body>
 {% endblock content %}
 

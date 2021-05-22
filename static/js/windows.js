@@ -41,12 +41,31 @@ function submitRating(){
     // submit
 }
 
+function exitFlight(){
+    $('#rocket-container').css("display", "none")
+    $('#rocket-container button').remove()
+}
+
+function startFlight(){
+    $('#rocket-container').css("display", "block")
+    $('#rocket-container').append("<button>Press to exit flight</button>");
+    $('#rocket-container button').css({"color": "red", "background-color": "black", "left": "45vw", "bottom": "22px"})
+    $('#rocket-container button').click(function() {
+        exitFlight();
+      });
+}
+
 function closeWindow(windowToClose){
     windowToClose.parentNode.parentNode.parentNode.remove();
 }
 
+function highlightIcon(icon){
+    //implement
+} 
+
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
+
     // create window prepend to dekstop with absolute position
     window_id = windowToOpen.getAttribute("id");
     draggable_window = ""
@@ -84,42 +103,29 @@ function openDraggableWindow(windowToOpen){
           "<button>Submit</button>" + 
           "</div></div>";
           break;
-          case "game-help":
+        case "game-help":
+        draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+        "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
+        "<div class='title-bar-text'>Steam98Help.txt</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
+        "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> " +  
+        "<ul class='tree-view'><li>Table of Contents</li><li>What is web development?</li><li>CSS<ul><li>Selectors</li><li>Specificity</li><li>Properties</li></ul></li><li><details open><summary>JavaScript</summary><ul><li>Avoid at all costs</li><li><details><summary>Unless</summary<ul><li>Avoid</li><li><details><summary>At</summary><ul><li>Avoid</li><li>At</li><li>All</li> <li>Cost</li></ul></details></li><li>All</li><li>Cost</li></ul></details></li></ul></details></li><li>HTML</li><li>Special Thanks</li></ul>" +
+        "</div></div>";
+            break;
+        case "themes":
             draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
-            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
-            "<div class='title-bar-text'>Steam98Help.txt</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> " +  
+            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/themes_small.png'>" +
+            "<div class='title-bar-text'>Themes</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
+            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> " + 
+            "<p>Desktop</p> <div class='field-row'><label for='range22'>R:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='0' /><label for='range24'>256</label></div>" +
+            "<div class='field-row'><label for='range22'>G:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='128' /><label for='range24'>256</label></div>" +
+            "<div class='field-row'><label for='range22'>B:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='128' /><label for='range24'>256</label></div>" +
+            "<p>Taskbar</p> <div class='field-row'><label for='range22'>R:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
+            "<div class='field-row'><label for='range22'>G:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
+            "<div class='field-row'><label for='range22'>B:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
             "</div></div>";
             break;
       }
     $(".desktop").prepend(draggable_window);
     $( "#draggable-window" ).draggable();
     $( "#draggable-window" ).resizable();
-
-}
-
-function displayGameHelp(){
-    // to be implemented
-    window.alert("Game help");
-}
-
-function openAboutMe(){
-    // make icon and name blue
-    // create window prepend to dekstop with absolute position
-    draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> <div style='display: flex; align-items: center;'><img src= '/static/images/icons/logan_small.png'><div class='title-bar-text'>About Me</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'></button> <button aria-label='Maximize'></button> <button aria-label='Close'></button> </div> </div> <div class='window-body'> <p>There's so much room for activities!</p> </div></div>";
-    $(".desktop").prepend(draggable_window);
-    $( "#draggable-window" ).draggable();
-
-}
-
-function openProjects(){
-    window.alert("Projects");
-}
-
-function openResume(){
-    window.alert("Resume");
-}
-
-function openContactMe(){
-    window.alert("Contact Me");
 }

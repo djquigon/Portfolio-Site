@@ -59,7 +59,7 @@
               <img class='icon' src="{%  static 'images/icons/aim.png' %}">
                 AIM
             </li>
-            <li class="item">
+            <li class="item" id="rocket" onclick="startFlight()">
               <img class='icon' src="{%  static 'images/icons/rocket.png' %}">
                 ?????????????
             </li>
@@ -133,9 +133,15 @@
             </li>
           </ul>
         </li>
-        <li class='item folder'>
+        <li class='item folder' id = "themes" onclick="openDraggableWindow(this)">
           <img class='icon' src="{%  static 'images/icons/settings.gif' %}">
           <em>S</em>ettings
+          <ul class='menu-content'>
+            <li class="item">
+              <img class='icon' src="{%  static 'images/icons/themes.png' %}">
+                Themes
+            </li>
+          </ul>
         </li>
         <li class='item folder'>
           <img class='icon' src="{%  static 'images/icons/find.gif' %}">
