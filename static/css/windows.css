@@ -118,6 +118,7 @@ body{
 #jsdos{
     width:100%;
     height:100%;
+    z-index: 0
 }
 
 .clippy{
@@ -126,6 +127,7 @@ body{
     position:fixed;
     background: url('/static/images/clippycursed.gif') no-repeat;
     background-position: center;
+    z-index: 999;
 }
 
 #intro-title-bar, #rating-title-bar{
@@ -134,4 +136,10 @@ body{
 
 .title-bar img, .title-bar div img{
     padding-right: 4px;
+}
+
+#draggable-window{
+    position: absolute;
+    z-index: 1;
+    text-align: left;
 }

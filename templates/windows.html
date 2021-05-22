@@ -12,8 +12,10 @@
   {%endblock content_css%}
 
   {%block scripts%}
-      <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
-      <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="{% static 'js/windows.js' %}"></script>
+  <script type="text/javascript" src="https://js-dos.com/6.22/current/js-dos.js"></script>
   {%endblock scripts%}
 </head>
 
@@ -21,19 +23,19 @@
 <body>
   <div class="desktop">
     <div id="desktop-icons">
-      <div class="desktop-icon" ondblclick="openAboutMe()">
+      <div id="about-me-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/logan.png' %}">
         <p>Logan.exe</p>
       </div>
-      <div class="desktop-icon" ondblclick="openProjects()">
+      <div id="projects-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/projects.png' %}">
         <p>Projects.exe</p>
       </div>
-      <div class="desktop-icon" ondblclick="openResume()">
+      <div id="my-resume-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/resume.png' %}">
-        <p>Resume.exe</p>
+        <p>My_Resume.exe</p>
       </div>
-      <div class="desktop-icon" ondblclick="openContactMe()">
+      <div id="contact-me-icon" class="desktop-icon" ondblclick="openDraggableWindow(this)">
         <img src="{% static 'images/icons/contactme.png' %}">
         <p>Contact_Me.exe</p>
       </div>
@@ -83,7 +85,7 @@
     <img src="/static/images/icons/steam.png"> 
     <div class="title-bar-text">Steam98.exe</div>
     <div class="title-bar-controls">
-      <button id="game-help" aria-label="Help" onclick="displayGameHelp()"></button>
+      <button id="game-help" aria-label="Help" onclick="openDraggableWindow(this)"></button>
     </div>
   </div>
   <div class="window-body">
