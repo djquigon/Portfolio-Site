@@ -250,7 +250,7 @@
     margin-left: .2%;
   }
 
-  .clippy-icon{
+  #clippy-icon, #rating-icon{
     cursor: pointer;
   }
 

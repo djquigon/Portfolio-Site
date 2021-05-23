@@ -135,7 +135,7 @@ body{
     z-index: 999;
 }
 
-#intro-title-bar, #rating-title-bar{
+#intro-title-bar{
     justify-content: flex-start;
 }
 

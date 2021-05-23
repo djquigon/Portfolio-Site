@@ -144,7 +144,17 @@ function openDraggableWindow(windowToOpen){
               "<div class='field-row'><p style='margin-top: 0; margin-bottom: 0; margin-left: 30%;'>Version 3.0.1464</div>" +
               "</div></div>";
               resizable = false;
-                  break;    
+                  break;  
+                  
+            case "rating-icon":
+              draggable_window = "<div class='window' id='draggable-window'><div class='title-bar' id='rating-title-bar'>" +
+              "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/rating.png'>" +
+              "<div class='title-bar-text'>Rating</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
+              "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div>" +
+              "<div class='window-body'> <p id='rating-text'>Leave a rating!</p> <div class='field-row' id='rating-bar'> <label for='range22'>Rating:</label> <label for='range23'>0</label> <input id='range23' type='range' min='0' max='10' value='5' />" +
+              "<label for='range24'>10</label> </div> <button id='submit-rating' onclick='submitRating()'>Submit Rating</button> </div></div>";
+              resizable = false;
+              break;
       }
     $(".desktop").prepend(draggable_window);
     $( "#draggable-window" ).draggable();
