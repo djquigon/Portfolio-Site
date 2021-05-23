@@ -67,7 +67,7 @@
 }
 .taskbar .menu:before,
 .taskbar .menu:after {
-  /*content: "";*/
+  content: "";
   display: table;
 }
 .taskbar .menu:after {
