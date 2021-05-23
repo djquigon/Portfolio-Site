@@ -167,3 +167,7 @@ body{
   #rocket-container button{
     position: absolute;
   }
+
+  .shortcut{
+      position:absolute;
+  }
