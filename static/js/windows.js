@@ -111,15 +111,17 @@ function openDraggableWindow(windowToOpen){
           resizable = false;
           break;
         case "game-help":
-        draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+        draggable_window = "<div class='window' id='draggable-window' style='width: 400px;'> <div class='title-bar'> " + 
         "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
         "<div class='title-bar-text'>Steam98Help.txt</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
         "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
-        "<ul class='tree-view'><li><strong style='color: #55468e'>👾 Steam98 👾</strong></li><li>What is Steam98?<ul><li>Selectors</li></ul></li><li><details open><summary>Games</summary><ul><li><details><summary>Solitaire</summary><ul><li>Release Date:</li><li>Genre:</li></ul></ul>" +
-        "<ul><li><details><summary>Ms. Pacman</summary><ul><li>Release Date:</li><li>Genre:</li></ul></ul>" +
-        "<ul><li><details><summary>DOOM</summary><ul><li>Release Date:</li><li>Genre:</li></ul>" +
+        "<ul class='tree-view'><li><strong style='color: #55468e'>👾 Steam98 👾</strong></li><li>What is Steam98?<ul><li>Steam98 is my implementation of <a style='text-decoration: underline; color: #7b468e;'href='https://js-dos.com/'>js-dos</a> for this windows98 themed site. Simply pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!</li></ul></li><li><details open><summary>Games</summary> " +
+        "<ul><li><details><summary>Solitaire</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul></ul>" +
+        "<ul><li><details><summary>Ms. Pacman</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul></ul>" +
+        "<ul><li><details><summary>DOOM</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul>" +
         "</details></li></ul></details></li></ul>" +
         "</div></div>";
+        resizable = false;
             break;
         case "themes":
             draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
