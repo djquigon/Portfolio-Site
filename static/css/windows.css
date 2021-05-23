@@ -93,7 +93,7 @@ body{
 }
 
 .dosbox-container { 
-    width: 640px; height: 400px; 
+    width: 640px; height: 480px; 
 }
 
 .dosbox-canvas{
@@ -113,7 +113,7 @@ body{
 }
 
 #game-screen {
-    height:400px;
+    height:480px;
     width: 640px;
     background: url('/static/images/icons/spinning_quigon.gif') no-repeat;
     background-position: center;
