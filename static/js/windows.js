@@ -64,12 +64,17 @@ function highlightIcon(icon){
     //implement
 } 
 
+function submitMessage(){
+  // for contact me
+}
+
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
 
     // create window prepend to dekstop with absolute position
     window_id = windowToOpen.getAttribute("id");
     draggable_window = ""
+    resizable = true;
     switch (window_id) {
         case "about-me-icon":
           draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
@@ -100,9 +105,10 @@ function openDraggableWindow(windowToOpen){
           "<div class='field-row'> <label for='text17'>Email</label> <input id='text17' type='text' /> </div> " +
           "<div class='field-row'><label for='text17'>Reason</label><select> <option>Personal</option>" +
           "<option>Work-related</option> <option>Question</option><option>Other</option></select></div>" +
-          "<div class='field-row-stacked' style='width: 200px'> <label for='text20'>Message</label> <textarea id='text20' rows='8'></textarea> </div>" +
+          "<div class='field-row-stacked' style='width: 200px'> <label for='text20'>Message</label> <textarea id='text20' rows='8' style='resize: none;'></textarea> </div>" +
           "<button>Submit</button>" + 
           "</div></div>";
+          resizable = false;
           break;
         case "game-help":
         draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
@@ -129,17 +135,20 @@ function openDraggableWindow(windowToOpen){
               draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
               "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/aim_small.png'>" +
               "<div class='title-bar-text'>Sign On</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-              "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> <img src= '/static/images/aim_header.jpg'> " +  
+              "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> <img src='/static/images/aim_header.jpg'> <hr> " +  
               "<div class='field-row'><label for='text17'>Screen Name</label><select> <option>&lt;New User&gt;</option>" +
               "<option>loganator97</option></select></div>" +
               "<div class='field-row'> <label for='text17'>Password</label> <input id='text17' disabled type='text' /> </div> " +
-              "<div class='field-row'><input disabled type='checkbox' id='aim-save-password'><label for='aim-save-password'>Save password</label><input disabled type='checkbox' id='aim-auto-login'><label for='aim-auto-login'>Auto-login</label></div>" + 
-              "<div class='field-row' id='aim-button-row'><div style='display: flex;'><div><img src= '/static/images/icons/aim_help.png'><p>Help</p></div><div><img src= '/static/images/icons/aim_setup.png'><p>Setup</p></div></div><div><img src= '/static/images/icons/aim_signon.png'><p><b>Sign On</b></p></div></div>" +
-              "<div class='field-row'><p>Version 3.0.1464</div>" +
+              "<div class='field-row'><input disabled type='checkbox' id='aim-save-password'><label for='aim-save-password' style='margin-right: 16%;'>Save password</label><input disabled type='checkbox' id='aim-auto-login'><label for='aim-auto-login'>Auto-login</label></div>" + 
+              "<div class='field-row' id='aim-button-row'><div style='display: flex;'><div><img src= '/static/images/icons/aim_help.png'><p>Help</p></div><div style='margin-left: 50%;'><img src= '/static/images/icons/aim_setup.png'><p>Setup</p></div></div><div><img src= '/static/images/icons/aim_signon.png'><p><b>Sign On</b></p></div></div>" +
+              "<div class='field-row'><p style='margin-top: 0; margin-bottom: 0; margin-left: 30%;'>Version 3.0.1464</div>" +
               "</div></div>";
+              resizable = false;
                   break;    
       }
     $(".desktop").prepend(draggable_window);
     $( "#draggable-window" ).draggable();
-    $( "#draggable-window" ).resizable();
+    if(resizable){
+      $( "#draggable-window" ).resizable();
+    }
 }
