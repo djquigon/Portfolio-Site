@@ -228,6 +228,7 @@
     flex-wrap: nowrap;
     flex-direction: row;
     align-content: center;
+    box-shadow: 5px 5px 20px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
   }
   
   #startbutton {
