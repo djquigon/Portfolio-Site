@@ -5,11 +5,13 @@ body{
 */
 .block-centered{
     display: flex;
+    position: absolute;
     flex-direction: column;
     align-content: center;
     align-items: center;
     justify-content: center;
     width: 45vw;
+    left: 25vw;
 }
 
 #welcome{
@@ -144,8 +146,8 @@ body{
     position: absolute;
     z-index: 1;
     text-align: left;
-    height: 480px;
-    width: 640px;
+    /*height: 480px;
+    width: 640px;*/
     top: 25%;
     left: 25%;
 }
@@ -172,4 +174,15 @@ body{
 
   .shortcut{
       position:absolute;
+  }
+
+  #aim-button-row img{
+    height: 25px;
+    width: 25px;
+     cursor: pointer;
+  }
+
+  #aim-button-row{
+      display: flex;
+      justify-content: space-between;
   }

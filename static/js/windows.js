@@ -125,6 +125,19 @@ function openDraggableWindow(windowToOpen){
             "<div class='field-row'><label for='range22'>B:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
             "</div></div>";
             break;
+            case "aim":
+              draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+              "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/aim_small.png'>" +
+              "<div class='title-bar-text'>Sign On</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
+              "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> <img src= '/static/images/aim_header.jpg'> " +  
+              "<div class='field-row'><label for='text17'>Screen Name</label><select> <option>&lt;New User&gt;</option>" +
+              "<option>loganator97</option></select></div>" +
+              "<div class='field-row'> <label for='text17'>Password</label> <input id='text17' disabled type='text' /> </div> " +
+              "<div class='field-row'><input disabled type='checkbox' id='aim-save-password'><label for='aim-save-password'>Save password</label><input disabled type='checkbox' id='aim-auto-login'><label for='aim-auto-login'>Auto-login</label></div>" + 
+              "<div class='field-row' id='aim-button-row'><div style='display: flex;'><div><img src= '/static/images/icons/aim_help.png'><p>Help</p></div><div><img src= '/static/images/icons/aim_setup.png'><p>Setup</p></div></div><div><img src= '/static/images/icons/aim_signon.png'><p><b>Sign On</b></p></div></div>" +
+              "<div class='field-row'><p>Version 3.0.1464</div>" +
+              "</div></div>";
+                  break;    
       }
     $(".desktop").prepend(draggable_window);
     $( "#draggable-window" ).draggable();

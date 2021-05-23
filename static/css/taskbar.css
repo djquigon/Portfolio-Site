@@ -51,7 +51,7 @@
   width: 14px;
 }
 .taskbar .menu {
-  background: #bfbfbf;
+  background: silver;
   border: 1px solid;
   border-top-color: #dfdfdf;
   border-left-color: #dfdfdf;
@@ -219,7 +219,7 @@
     left: 0;
     height:  39.5px;
     width: 100vw;
-    background-color: #bdbebd;
+    background-color: silver;
     border-top: 2px solid white;
     /*padding: 3px;*/
     display: flex;
