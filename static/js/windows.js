@@ -115,7 +115,9 @@ function openDraggableWindow(windowToOpen){
         "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
         "<div class='title-bar-text'>Steam98Help.txt</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
         "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
-        "<ul class='tree-view'><li><strong style='color: purple'>✨ Whatever ✨</strong></li><li>Table of Contents</li><li>What is web development?</li><li>CSS<ul><li>Selectors</li><li>Specificity</li><li>Properties</li></ul></li><li><details open><summary>JavaScript</summary><ul><li>Avoid at all costs</li><li><details><summary>Unless</summary<ul><li>Avoid</li><li><details><summary>At</summary><ul><li>Avoid</li><li>At</li><li>All</li> <li>Cost</li></ul></details></li><li>All</li><li>Cost</li></ul></details></li></ul></details></li></ul>" +
+        "<ul class='tree-view'><li><strong style='color: #55468e'>✨ Steam98 ✨</strong></li><li>What is Steam98?<ul><li>Selectors</li></ul></li><li><details open><summary>Games</summary><ul><li><details><summary>DOOM</summary><ul><li>Release Date:</li><li>Genre:</li></ul></ul" +
+        "<ul><li><details><summary>DUKE3D</summary><ul><li>Release Date:</li><li>Genre:</li></ul>" +
+        "</details></li></ul></details></li></ul>" +
         "</div></div>";
             break;
         case "themes":
