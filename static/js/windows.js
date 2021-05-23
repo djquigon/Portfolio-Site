@@ -47,9 +47,10 @@ function exitFlight(){
 }
 
 function startFlight(){
+  //////////////////////////////////////////////////////////take as note of how to refactor
     $('#rocket-container').css("display", "block")
     $('#rocket-container').append("<button>Press to exit flight</button>");
-    $('#rocket-container button').css({"color": "red", "background-color": "black", "left": "45vw", "bottom": "22px"})
+    $('#rocket-container button').css({"color": "red", "background-color": "black", "left": "45vw", "bottom": "10px"})
     $('#rocket-container button').click(function() {
         exitFlight();
       });
