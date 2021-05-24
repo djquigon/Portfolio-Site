@@ -103,7 +103,7 @@ function openDraggableWindow(windowToOpen){
            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/resume_small.png'>" +
            "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> " + 
-           "<p>There's so much room for activities!</p> <a href='/static/assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
+           "<p>There's so much room for activities!</p> <a target='_blank'href='/static/assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
           break;
         case "contact-me-icon":
           draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
