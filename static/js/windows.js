@@ -80,8 +80,16 @@ function openDraggableWindow(windowToOpen){
           draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
           "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/logan_small.png'>" +
           "<div class='title-bar-text'>Logan.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
-          "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> " + 
-          "<p>There's so much room for activities!</p> </div></div>";
+          "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='about-me'> " + 
+          "<div style='display: flex; justify-content: space-between;'><img style='transform: scaleX(-1);' class='purp' src='/static/images/purp.gif'><h2>About Me</h2><img class='purp' src='/static/images/purp.gif'></div><p>Born in 1997, grew up in Atlanta, Georgia. Graduated high school in 2016 and started coding in my first year of college in 2017 after first learning about Bitcoin (true story). Switched my major to computer science the following year and graduated from the University of Georgia in spring 2021.</p>" + 
+          "<p><b>Work Interests:</b> Full stack web development but preferably front end work. Would love to do frontend work for any DeFi project utilizing the web3 framework. Would also love to work in game development and currently using Unity to hone my skills in this area in my freetime.</p>" +
+          "<p><b>Skills:</b> Experience in java, c++, c#, python, js, html, css, and solidity. More specifically experience within web frameworks such as django and spring.</p>" +
+          "<p><b>Personal Interests/Hobbies:</b> Coding (obviously), Crypto/DeFi/Web3, watching atlanta sports teams (sadly), cooking/grilling, traveling, playing video games</p>" +
+          "<p><b>Favorite Food: </b>Pizza <img style='height:25px;'src='/static/images/pizza.gif'></p>" +
+          "<p><b>Favorite Movie:</b> Star Wars: The Phantom Menace (JK...but not really) &nbsp&nbsp<img style='height:30px;'src='/static/images/favicon.ico'></p>" +
+          "<p><b>Favorite Game:</b> If you know, you know... <img style='height:50px;' src='/static/images/chief.gif'></p>" +
+          "</div></div>";
+          resizable = false;
           break;
         case "projects-icon":
           draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
@@ -95,7 +103,7 @@ function openDraggableWindow(windowToOpen){
            "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/resume_small.png'>" +
            "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
            "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body'> " + 
-           "<p>There's so much room for activities!</p> </div></div>";
+           "<p>There's so much room for activities!</p> <a href='/static/assets/documents/scheid_resume.pdf'>PDF</a> </div></div>";
           break;
         case "contact-me-icon":
           draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
@@ -115,7 +123,7 @@ function openDraggableWindow(windowToOpen){
         "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
         "<div class='title-bar-text'>Steam98Help.txt</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
         "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
-        "<ul class='tree-view'><li><strong style='color: #55468e'>👾 Steam98 👾</strong></li><li>What is Steam98?<ul><li>Steam98 is my implementation of <a style='text-decoration: underline; color: #7b468e;'href='https://js-dos.com/'>js-dos</a> for this windows98 themed site. Simply pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!</li></ul></li><li><details open><summary>Games</summary> " +
+        "<ul class='tree-view'><li><strong style='color: #55468e'>👾 Steam98 👾</strong></li><li>What is Steam98?<ul><li>Steam98 is my implementation of <a style='text-decoration: underline; color: #7b468e;'href='https://js-dos.com/'>js-dos</a>, a javascript library that allows you to run DOS programs in a browser. Simply pick a game from the Games folder in the start menu and start playing. You can only load one game at a time, but you can exit a game whenever you wish. Below are some various faqs and tips for each game. Contact me if you have any game requests!</li></ul></li><li><details open><summary>Games</summary> " +
         "<ul><li><details><summary>Solitaire</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul></ul>" +
         "<ul><li><details><summary>Ms. Pacman</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul></ul>" +
         "<ul><li><details><summary>DOOM</summary><ul><li>Release Date:</li><li>Genre:</li><li>Description:</li></ul>" +

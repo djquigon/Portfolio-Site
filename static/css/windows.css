@@ -195,3 +195,12 @@ body{
   #steam-help{
       text-align: left;
   }
+
+  .purp{
+      width: 100px;
+      height: 100px;
+  }
+
+  #about-me{
+    width: 460px;
+  }
