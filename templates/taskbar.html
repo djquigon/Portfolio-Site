@@ -13,8 +13,26 @@
 {% block content %}
 <div class='taskbar'>
     <div class="startbar">
-      <div id="startbutton" class="startbutton-off">
-        <b>Start</b>
+      <div id='start-program-container'>
+        <div id="startbutton" class="startbutton-off">
+          <b>Start</b>
+        </div>
+        <!--
+        <div id='program_container'>
+          <span class="program" id="logan-icon">
+            <div>
+              <img src='/static/images/icons/logan_small.png'><p>Logan.exe</p>
+            </div>
+          </span>
+        </div>
+        <div id='program_container'>
+          <span class="program" id="projects-icon">
+            <div>
+              <img src='/static/images/icons/projects_small.png'><p>Projects.exe</p>
+            </div>
+          </span>
+        </div>
+        -->
       </div>
       <div class="time">
           <img class='icon' id='rating-icon' src="{%  static 'images/icons/rating.png' %}" onclick="openDraggableWindow(this)">
@@ -56,7 +74,7 @@
                 <img class='icon' src="{%  static 'images/icons/mspaint.png' %}">
                 Microsoft Paint
             </li>
-            <li class="item" id="aim" onclick="openDraggableWindow(this)">
+            <li class="item" id="aim-icon" onclick="openDraggableWindow(this)">
               <img class='icon' src="{%  static 'images/icons/aim.png' %}">
                 AIM
             </li>
@@ -134,7 +152,7 @@
             </li>
           </ul>
         </li>
-        <li class='item folder' id = "themes" onclick="openDraggableWindow(this)">
+        <li class='item folder' id = "themes-icon" onclick="openDraggableWindow(this)">
           <img class='icon' src="{%  static 'images/icons/settings.gif' %}">
           <em>S</em>ettings
           <ul class='menu-content'>
