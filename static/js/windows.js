@@ -56,6 +56,34 @@ function startFlight(){
       });
 }
 
+//Helper method for setZ that gets the highest z-index value for all draggable windows
+function getHighestDraggableZ(){
+    highest_z = 10; //had to make this 10 because of very strange bug that i still dont understand involving z-index at 10
+    $('.ui-draggable').each(function(i, obj) {
+      z = $(obj).css('z-index');
+      if(z > highest_z){
+        highest_z = z;
+      }
+    });
+    return highest_z;
+}
+
+function setZ(clicked_window){
+  highest_z = parseInt(getHighestDraggableZ());
+  if(clicked_window.style.zIndex <= highest_z){
+    new_highest_z = highest_z + 1;
+    clicked_window.style.zIndex = new_highest_z;
+    //remove clicked from all others
+    removeProgramClicked();
+    //also set clicked-program?
+    body = clicked_window.querySelector('.window-body');
+    body_id = body.id;
+    program = "#" + body_id + "-program-container span";
+    $(program).removeClass();
+    $(program).addClass("program-clicked program");
+  }
+}
+
 function closeWindow(windowToClose){
     //get program name (taskbar)
     program_name = windowToClose.parentNode.parentNode.nextElementSibling.id + "-program-container";
@@ -65,8 +93,16 @@ function closeWindow(windowToClose){
 }
 
 function highlightIcon(icon){
-    //implement
+    //$(icon).css({"outline": "50px solid rgb(14 117 199 / 50%)", "outline-offset": "-70px", "overflow": "hidden", "position": "relative"})
 } 
+
+function makeProgramClicked(program){
+  program.className = "program-clicked program";
+}
+
+function removeProgramClicked(){
+  $(".program-clicked").removeClass("program-clicked");
+}
 
 function submitMessage(){
   // for contact me
@@ -74,15 +110,14 @@ function submitMessage(){
 
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
-
-    // create window prepend to dekstop with absolute position
     window_id = windowToOpen.getAttribute("id");
+    highest_z = parseInt(getHighestDraggableZ()) + 1; //get highest z-index and set window to that
     draggable_window = ""
     resizable = true;
     switch (window_id) {
         case "logan-icon":
           if($('#logan').length == 0){
-            draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/logan_small.png'>" +
             "<div class='title-bar-text'>Logan.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='logan'> " + 
@@ -97,11 +132,12 @@ function openDraggableWindow(windowToOpen){
             resizable = false;
             //create program
             if($('#logan-program-container').length == 0){
+              removeProgramClicked();
               $("#start-program-container").append($(document.createElement('div'))
                 .attr({ id: 'logan-program-container' })
                 .addClass("program-container"));
               $("#logan-program-container").append($(document.createElement('span'))
-                .addClass("program"));
+                .addClass("program-clicked program"));
               $("#logan-program-container span").append($(document.createElement('div')));
               $("#logan-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/logan_small.png'}));
               $("#logan-program-container span div").append($(document.createElement('p')).text("Logan.exe"));
@@ -111,7 +147,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "projects-icon":
           if($('#projects').length == 0){
-            draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/projects_small.png'>" +
             "<div class='title-bar-text'>Projects.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='projects'> " + 
@@ -119,12 +155,12 @@ function openDraggableWindow(windowToOpen){
             resizable = false;
             //create program
             if($('#projects-program-container').length == 0){
+              removeProgramClicked();
               $("#start-program-container").append($(document.createElement('div'))
                 .attr({ id: 'projects-program-container' })
                 .addClass("program-container"));
               $("#projects-program-container").append($(document.createElement('span'))
-                .attr({ id: 'projects-icon' })
-                .addClass("program"));
+                .addClass("program-clicked program"));
               $("#projects-program-container span").append($(document.createElement('div')));
               $("#projects-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/projects_small.png'}));
               $("#projects-program-container span div").append($(document.createElement('p')).text("Projects.exe"));
@@ -134,7 +170,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "my-resume-icon":
           if($('#my-resume').length == 0){
-            draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/resume_small.png'>" +
             "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='my-resume'> " + 
@@ -142,12 +178,12 @@ function openDraggableWindow(windowToOpen){
             resizable = false;
             //create program
             if($('#my-resume-program-container').length == 0){
+              removeProgramClicked();
               $("#start-program-container").append($(document.createElement('div'))
                 .attr({ id: 'my-resume-program-container' })
                 .addClass("program-container"));
               $("#my-resume-program-container").append($(document.createElement('span'))
-                .attr({ id: 'my-resume-icon' })
-                .addClass("program"));
+                .addClass("program-clicked program"));
               $("#my-resume-program-container span").append($(document.createElement('div')));
               $("#my-resume-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/resume_small.png'}));
               $("#my-resume-program-container span div").append($(document.createElement('p')).text("My_Resume.exe"));
@@ -157,7 +193,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "contact-me-icon":
           if($('#contact-me').length == 0){
-            draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/contactme_small.png'>" +
             "<div class='title-bar-text'>Contact_Me.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='contact-me'> " + 
@@ -170,12 +206,12 @@ function openDraggableWindow(windowToOpen){
             resizable = false;
             //create program
             if($('#contact-me-program-container').length == 0){
+              removeProgramClicked();
               $("#start-program-container").append($(document.createElement('div'))
                 .attr({ id: 'contact-me-program-container' })
                 .addClass("program-container"));
               $("#contact-me-program-container").append($(document.createElement('span'))
-                .attr({ id: 'contact-me-icon' })
-                .addClass("program"));
+                .addClass("program-clicked program"));
               $("#contact-me-program-container span").append($(document.createElement('div')));
               $("#contact-me-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/contactme_small.png'}));
               $("#contact-me-program-container span div").append($(document.createElement('p')).text("Contact_Me.exe"));
@@ -185,7 +221,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "steam-help-icon":
           if($('#steam-help').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' style='width: 400px;'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='width: 400px; z-index:" + highest_z + ";'> <div class='title-bar'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
             "<div class='title-bar-text'>Steam98Help</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
@@ -198,12 +234,12 @@ function openDraggableWindow(windowToOpen){
             resizable = false;
             //create program
             if($('#steam-help-program-container').length == 0){
+              removeProgramClicked();
               $("#start-program-container").append($(document.createElement('div'))
                 .attr({ id: 'steam-help-program-container' })
                 .addClass("program-container"));
               $("#steam-help-program-container").append($(document.createElement('span'))
-                .attr({ id: 'steam-help-icon' })
-                .addClass("program"));
+                .addClass("program-clicked program"));
               $("#steam-help-program-container span").append($(document.createElement('div')));
               $("#steam-help-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/steam.png'}));
               $("#steam-help-program-container span div").append($(document.createElement('p')).text("Steam98Help"));
@@ -213,7 +249,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "themes-icon":
           if($('#themes').length == 0){
-            draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/themes_small.png'>" +
             "<div class='title-bar-text'>Themes</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='themes'>" + 
@@ -227,12 +263,12 @@ function openDraggableWindow(windowToOpen){
             resizable = false;
             //create program
             if($('#themes-program-container').length == 0){
+              removeProgramClicked();
               $("#start-program-container").append($(document.createElement('div'))
                 .attr({ id: 'themes-program-container' })
                 .addClass("program-container"));
               $("#themes-program-container").append($(document.createElement('span'))
-                .attr({ id: 'themes-icon' })
-                .addClass("program"));
+                .addClass("program-clicked program"));
               $("#themes-program-container span").append($(document.createElement('div')));
               $("#themes-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/themes_small.png'}));
               $("#themes-program-container span div").append($(document.createElement('p')).text("Themes"));
@@ -242,7 +278,7 @@ function openDraggableWindow(windowToOpen){
           break;
             case "aim-icon":
               if($('#aim').length == 0){
-                draggable_window = "<div class='window' id='draggable-window'> <div class='title-bar'> " + 
+                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
                 "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/aim_small.png'>" +
                 "<div class='title-bar-text'>Sign On</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
                 "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='aim'> <img src='/static/images/aim_header.jpg'> <hr> " +  
@@ -256,12 +292,12 @@ function openDraggableWindow(windowToOpen){
                 resizable = false;
                 //create program
                 if($('#aim-program-container').length == 0){
+                  removeProgramClicked();
                   $("#start-program-container").append($(document.createElement('div'))
                     .attr({ id: 'aim-program-container' })
                     .addClass("program-container"));
                   $("#aim-program-container").append($(document.createElement('span'))
-                    .attr({ id: 'aim-icon' })
-                    .addClass("program"));
+                    .addClass("program-clicked program"));
                   $("#aim-program-container span").append($(document.createElement('div')));
                   $("#aim-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/aim_small.png'}));
                   $("#aim-program-container span div").append($(document.createElement('p')).text("AOL Instant Messenger"));
@@ -272,7 +308,7 @@ function openDraggableWindow(windowToOpen){
                   
             case "rating-icon":
               if($('#rating').length == 0){
-                draggable_window = "<div class='window' id='draggable-window'><div class='title-bar' id='rating-title-bar'>" +
+                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'><div class='title-bar' id='rating-title-bar'>" +
                 "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/rating.png'>" +
                 "<div class='title-bar-text'>Rating</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
                 "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div>" +
@@ -281,12 +317,12 @@ function openDraggableWindow(windowToOpen){
                 resizable = false;
                 //create program
                 if($('#rating-program-container').length == 0){
+                  removeProgramClicked();
                   $("#start-program-container").append($(document.createElement('div'))
                     .attr({ id: 'rating-program-container' })
                     .addClass("program-container"));
                   $("#rating-program-container").append($(document.createElement('span'))
-                    .attr({ id: 'rating-icon' })
-                    .addClass("program"));
+                    .addClass("program-clicked program"));
                   $("#rating-program-container span").append($(document.createElement('div')));
                   $("#rating-program-container span div").append($(document.createElement('img')).attr({ src: '/static/images/icons/rating.png'}));
                   $("#rating-program-container span div").append($(document.createElement('p')).text("Rating"));

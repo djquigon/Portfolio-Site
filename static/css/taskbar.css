@@ -304,9 +304,6 @@
     border-left: 2px solid white;
     border-bottom: 2px solid black;
     border-right: 2px solid black;
-    box-sizing: border-box; 
-    background-size: auto 70%;
-    background-repeat: no-repeat; 
   }
 
   .program div{
@@ -323,4 +320,14 @@
     display: flex;
     align-items: center;
     margin-left: .2%;
+  }
+
+  .program-clicked{
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: none;
+    border-right: none;
+    box-shadow: inset 1px 1px grey;
+    background-image: url("/static/images/opened_pixel.png");
+    
   }

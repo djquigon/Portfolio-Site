@@ -145,7 +145,7 @@ body{
 
 #draggable-window{
     position: absolute;
-    z-index: 1;
+    z-index: 11;
     text-align: left;
     /*height: 480px;
     width: 640px;*/
