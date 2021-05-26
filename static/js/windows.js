@@ -90,6 +90,22 @@ function closeWindow(windowToClose){
     //close window and remove program from taskbar
     windowToClose.parentNode.parentNode.parentNode.remove();
     $( "#" + program_name).remove();
+    //find new program to toggle
+    highest_z = getHighestDraggableZ();
+    newClosestWindow = "";
+    $('.ui-draggable').each(function(i, obj) {
+      z = $(obj).css('z-index');
+      if(z == highest_z){
+        newClosestWindow = obj;
+      }
+    });
+    if(newClosestWindow != ""){
+      body = newClosestWindow.querySelector('.window-body');
+      body_id = body.id;
+      program = "#" + body_id + "-program-container span";
+      $(program).removeClass();
+      $(program).addClass("program-clicked program");
+    }
 }
 
 function highlightIcon(icon){
@@ -100,6 +116,7 @@ function makeProgramClicked(program){
   program.className = "program-clicked program";
 }
 
+//remove program-clicked for all elements
 function removeProgramClicked(){
   $(".program-clicked").removeClass("program-clicked");
 }
