@@ -358,7 +358,7 @@ function openDraggableWindow(windowToOpen){
             "<button font-size='16' size='36' onclick= changeTheme('clouds')><span role='img' style='font-size: 30px;'>☁️</span></button>" + 
             "<p>Cybercity</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('cybercity')><span role='img' style='font-size: 30px;'>🌆</span></button>" + 
-            "<p>Cybercity</p>" + 
+            "<p>Cybernightcity</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('cybernightcity')><span role='img' style='font-size: 30px;'>🌃</span></button>" + 
             "<p>Galaxy</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('galaxy')><span role='img' style='font-size: 30px;'>🌌</span></button>" +
