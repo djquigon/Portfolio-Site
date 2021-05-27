@@ -76,13 +76,46 @@
 .taskbar .menu >.menu-content {
   float: right;
 }
-.taskbar .menu .menu-sidebar {
+.menu-sidebar {
   background: -webkit-linear-gradient(top, #000080, #1084d0);
   background: linear-gradient(to bottom, #000080, #1084d0);
   position: absolute;
   width: 25px;
   height: 100%;
 }
+
+.dark-menu-sidebar{
+  background: linear-gradient(to bottom,#070707,#363636);
+}
+
+.rose-gold-menu-sidebar{
+  background: linear-gradient(to bottom,#e27474,#d0a610);
+}
+
+.clouds-menu-sidebar{
+  background: linear-gradient(to bottom,#508bcf,#9dc9e6);
+}
+
+.cybercity-menu-sidebar{
+  background: linear-gradient(to bottom,#ac4406,#00244e);
+}
+
+.galaxy-menu-sidebar{
+  background: linear-gradient(to bottom,#000055,#b46caa);
+}
+
+.xp-menu-sidebar{
+  background: linear-gradient(to bottom,#528bf2,#5b7920);
+}
+
+.doge-menu-sidebar{
+  background: linear-gradient(to bottom,#c99a40,#ccbf9c);
+}
+
+.star-wars-menu-sidebar{
+  background: linear-gradient(to bottom,#1d0766,#c60093);
+}
+
 .taskbar .menu .menu-sidebar .headline {
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
@@ -95,6 +128,7 @@
   font-size: 16px;
   color: #fff;
 }
+
 .taskbar .menu .menu-content {
   margin: 0;
   padding: 0;

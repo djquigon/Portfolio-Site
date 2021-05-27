@@ -126,44 +126,78 @@ function submitMessage(){
 }
 
 function changeTheme(theme){
+  $(".desktop").removeAttr('style');
+  $(".startbar").removeAttr('style');
+  $(".menu").removeAttr('style');
+  $(".menu-content").removeAttr('style');
   switch (theme) {
     case "light":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background-color", "#008080");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("title-bar");
+      $(".menu-sidebar").removeClass().addClass("menu-sidebar");
       break;
     case "dark":
+      $(".desktop").css("background-color", "#291c20");
+      $(".startbar").css("background-color", "#7b7979");
+      $(".menu").css("background", "#7b7979");
+      $(".menu-content").css("background", "#7b7979");
+      $(".title-bar").removeClass().addClass("dark-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("dark-menu-sidebar menu-sidebar");
       break;
     case "rose-gold":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background-color", "#e6808c");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("rose-gold-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("rose-gold-menu-sidebar menu-sidebar");
       break;
     case "clouds":
+      $(".desktop").css("background", "url('/static/images/backgrounds/clouds.jpg') no-repeat");
+      $(".title-bar").removeClass().addClass("clouds-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("clouds-menu-sidebar menu-sidebar");
       break;
     case "cybercity":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background", "url('/static/images/backgrounds/cybercity.gif') no-repeat");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("cybercity-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("cybercity-menu-sidebar menu-sidebar");
       break;
     case "galaxy":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background", "url('/static/images/backgrounds/galaxy.gif') no-repeat");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("galaxy-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("galaxy-menu-sidebar menu-sidebar");
       break;
     case "xp":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background", "url('/static/images/backgrounds/xp.jpg') no-repeat");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("xp-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("xp-menu-sidebar menu-sidebar");
       break;
     case "doge":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background", "url('/static/images/backgrounds/doge.jpg') no-repeat");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("doge-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("doge-menu-sidebar menu-sidebar");
       break;
     case "star-wars":
-      $(".desktop").removeAttr( 'style' );
       $(".desktop").css("background", "url('/static/images/backgrounds/starwars.gif') no-repeat");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("star-wars-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("star-wars-menu-sidebar menu-sidebar");
       break;
   }
 }
 
+function getTheme(){
+  theme = $("#intro-title-bar").attr('class');
+  return theme;
+}
+
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
+    //getTheme method using steam or intro window
+    theme = getTheme();
     window_id = windowToOpen.getAttribute("id");
     highest_z = parseInt(getHighestDraggableZ()) + 1; //get highest z-index and set window to that
     draggable_window = ""
@@ -171,7 +205,7 @@ function openDraggableWindow(windowToOpen){
     switch (window_id) {
         case "logan-icon":
           if($('#logan').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/logan_small.png'>" +
             "<div class='title-bar-text'>Logan.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='logan'> " + 
@@ -201,7 +235,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "projects-icon":
           if($('#projects').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/projects_small.png'>" +
             "<div class='title-bar-text'>Projects.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='projects'> " + 
@@ -224,7 +258,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "my-resume-icon":
           if($('#my-resume').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/resume_small.png'>" +
             "<div class='title-bar-text'>My_Resume.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='my-resume'> " + 
@@ -247,7 +281,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "contact-me-icon":
           if($('#contact-me').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/contactme_small.png'>" +
             "<div class='title-bar-text'>Contact_Me.exe</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='contact-me'> " + 
@@ -275,7 +309,7 @@ function openDraggableWindow(windowToOpen){
           break;
         case "steam-help-icon":
           if($('#steam-help').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='width: 400px; z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='width: 400px; z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/steam.png'>" +
             "<div class='title-bar-text'>Steam98Help</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='steam-help'> " +  
@@ -303,19 +337,28 @@ function openDraggableWindow(windowToOpen){
           break;
         case "themes-icon":
           if($('#themes').length == 0){
-            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+            draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/themes_small.png'>" +
             "<div class='title-bar-text'>Themes</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='themes'>" + 
             "<div><div style='display: flex; flex-direction: column;'>" + 
+            "<p>Light</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('light')><span role='img' style='font-size: 24px;'>🌞</span></button>" + 
+            "<p>Dark</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('dark')><span role='img' style='font-size: 24px;'>🌚</span></button>" + 
+            "<p>Rose-Gold</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('rose-gold')><span role='img' style='font-size: 24px;'>🌹</span></button>" + 
+            "<p>Clouds</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('clouds')><span role='img' style='font-size: 24px;'>☁️</span></button>" + 
+            "<p>Cybercity</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('cybercity')><span role='img' style='font-size: 24px;'>🌆</span></button>" + 
+            "<p>Galaxy</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('galaxy')><span role='img' style='font-size: 24px;'>🌌</span></button>" +
+            "<p>XP</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('xp')><span role='img' style='font-size: 24px;'>🌄</span></button>" +
+            "<p>Doge</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 24px;'>🐕</span></button>" +
+            "<p>Star Wars</p>" + 
             "<button font-size='16' size='36' onclick= changeTheme('star-wars')><span role='img' style='font-size: 24px;'>⭐</span></button>" +
             "</div></div></div></div>";
             resizable = false;
@@ -336,7 +379,7 @@ function openDraggableWindow(windowToOpen){
           break;
             case "aim-icon":
               if($('#aim').length == 0){
-                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='title-bar'> " + 
+                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'> <div class='" + theme + "'> " + 
                 "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/aim_small.png'>" +
                 "<div class='title-bar-text'>Sign On</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
                 "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='aim'> <img src='/static/images/aim_header.jpg'> <hr> " +  
@@ -366,7 +409,7 @@ function openDraggableWindow(windowToOpen){
                   
             case "rating-icon":
               if($('#rating').length == 0){
-                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'><div class='title-bar' id='rating-title-bar'>" +
+                draggable_window = "<div class='window' id='draggable-window' onmousedown='setZ(this)' style='z-index:" + highest_z + ";'><div class='" + theme + "' id='rating-title-bar'>" +
                 "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/rating.png'>" +
                 "<div class='title-bar-text'>Rating</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
                 "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div>" +
