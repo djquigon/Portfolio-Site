@@ -160,6 +160,10 @@ body{
     background: linear-gradient(90deg,#ac4406,#00244e);
 }
 
+.cybernightcity-title-bar{
+    background: linear-gradient(90deg,#fc30e6,#13ffff);
+}
+
 .galaxy-title-bar{
     background: linear-gradient(90deg,#000055,#b46caa);
 }

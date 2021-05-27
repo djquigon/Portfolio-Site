@@ -162,6 +162,12 @@ function changeTheme(theme){
       $(".title-bar").removeClass().addClass("cybercity-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("cybercity-menu-sidebar menu-sidebar");
       break;
+    case "cybernightcity":
+      $(".desktop").css("background", "url('/static/images/backgrounds/cybernightcity.gif') no-repeat");
+      $(".startbar").css("background-color", "silver");
+      $(".title-bar").removeClass().addClass("cybernightcity-title-bar title-bar");
+      $(".menu-sidebar").removeClass().addClass("cybernightcity-menu-sidebar menu-sidebar");
+      break;
     case "galaxy":
       $(".desktop").css("background", "url('/static/images/backgrounds/galaxy.gif') no-repeat");
       $(".startbar").css("background-color", "silver");
@@ -343,23 +349,25 @@ function openDraggableWindow(windowToOpen){
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='themes'>" + 
             "<div><div style='display: flex; flex-direction: column;'>" + 
             "<p>Light</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('light')><span role='img' style='font-size: 24px;'>🌞</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('light')><span role='img' style='font-size: 30px;'>🌞</span></button>" + 
             "<p>Dark</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('dark')><span role='img' style='font-size: 24px;'>🌚</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('dark')><span role='img' style='font-size: 30px;'>🌚</span></button>" + 
             "<p>Rose-Gold</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('rose-gold')><span role='img' style='font-size: 24px;'>🌹</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('rose-gold')><span role='img' style='font-size: 30px;'>🌹</span></button>" + 
             "<p>Clouds</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('clouds')><span role='img' style='font-size: 24px;'>☁️</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('clouds')><span role='img' style='font-size: 30px;'>☁️</span></button>" + 
             "<p>Cybercity</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('cybercity')><span role='img' style='font-size: 24px;'>🌆</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('cybercity')><span role='img' style='font-size: 30px;'>🌆</span></button>" + 
+            "<p>Cybercity</p>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('cybernightcity')><span role='img' style='font-size: 30px;'>🌃</span></button>" + 
             "<p>Galaxy</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('galaxy')><span role='img' style='font-size: 24px;'>🌌</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('galaxy')><span role='img' style='font-size: 30px;'>🌌</span></button>" +
             "<p>XP</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('xp')><span role='img' style='font-size: 24px;'>🌄</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('xp')><span role='img' style='font-size: 30px;'>🌄</span></button>" +
             "<p>Doge</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 24px;'>🐕</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 30px;'><img style='width:32px; height:40px;'src='/static/images/doge.png'></span></button>" +
             "<p>Star Wars</p>" + 
-            "<button font-size='16' size='36' onclick= changeTheme('star-wars')><span role='img' style='font-size: 24px;'>⭐</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('star-wars')><span role='img' style='font-size: 30px;'>⭐</span></button>" +
             "</div></div></div></div>";
             resizable = false;
             //create program
