@@ -220,7 +220,7 @@
     height:  39.5px;
     width: 100vw;
     background-color: silver;
-    border-top: 2px solid white;
+    /*border-top: 2px solid white;*/
     /*padding: 3px;*/
     display: flex;
     justify-content: space-between;

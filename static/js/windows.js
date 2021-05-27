@@ -125,6 +125,43 @@ function submitMessage(){
   // for contact me
 }
 
+function changeTheme(theme){
+  switch (theme) {
+    case "light":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background-color", "#008080");
+      break;
+    case "dark":
+      break;
+    case "rose-gold":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background-color", "#e6808c");
+      break;
+    case "clouds":
+      break;
+    case "cybercity":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background", "url('/static/images/backgrounds/cybercity.gif') no-repeat");
+      break;
+    case "galaxy":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background", "url('/static/images/backgrounds/galaxy.gif') no-repeat");
+      break;
+    case "xp":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background", "url('/static/images/backgrounds/xp.jpg') no-repeat");
+      break;
+    case "doge":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background", "url('/static/images/backgrounds/doge.jpg') no-repeat");
+      break;
+    case "star-wars":
+      $(".desktop").removeAttr( 'style' );
+      $(".desktop").css("background", "url('/static/images/backgrounds/starwars.gif') no-repeat");
+      break;
+  }
+}
+
 function openDraggableWindow(windowToOpen){
     // make icon and name blue
     window_id = windowToOpen.getAttribute("id");
@@ -270,13 +307,17 @@ function openDraggableWindow(windowToOpen){
             "<div style='display: flex; align-items: center;'><img src= '/static/images/icons/themes_small.png'>" +
             "<div class='title-bar-text'>Themes</div></div> <div class='title-bar-controls'> <button aria-label='Minimize'>" + 
             "</button> <button aria-label='Maximize'></button> <button aria-label='Close' onclick='closeWindow(this)'></button> </div> </div> <div class='window-body' id='themes'>" + 
-            "<p>Desktop</p> <div class='field-row'><label for='range22'>R:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='0' /><label for='range24'>256</label></div>" +
-            "<div class='field-row'><label for='range22'>G:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='128' /><label for='range24'>256</label></div>" +
-            "<div class='field-row'><label for='range22'>B:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='128' /><label for='range24'>256</label></div>" +
-            "<p>Taskbar</p> <div class='field-row'><label for='range22'>R:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
-            "<div class='field-row'><label for='range22'>G:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
-            "<div class='field-row'><label for='range22'>B:</label><label for='range23'>0</label><input id='range23' type='range' min='0' max='256' value='192' /><label for='range24'>256</label></div>" +
-            "</div></div>";
+            "<div><div style='display: flex; flex-direction: column;'>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('light')><span role='img' style='font-size: 24px;'>🌞</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('dark')><span role='img' style='font-size: 24px;'>🌚</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('rose-gold')><span role='img' style='font-size: 24px;'>🌹</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('clouds')><span role='img' style='font-size: 24px;'>☁️</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('cybercity')><span role='img' style='font-size: 24px;'>🌆</span></button>" + 
+            "<button font-size='16' size='36' onclick= changeTheme('galaxy')><span role='img' style='font-size: 24px;'>🌌</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('xp')><span role='img' style='font-size: 24px;'>🌄</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('doge')><span role='img' style='font-size: 24px;'>🐕</span></button>" +
+            "<button font-size='16' size='36' onclick= changeTheme('star-wars')><span role='img' style='font-size: 24px;'>⭐</span></button>" +
+            "</div></div></div></div>";
             resizable = false;
             //create program
             if($('#themes-program-container').length == 0){
