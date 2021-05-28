@@ -133,12 +133,14 @@ function changeTheme(theme){
   switch (theme) {
     case "light":
       $(".desktop").css("background-color", "#008080");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("title-bar");
       $(".menu-sidebar").removeClass().addClass("menu-sidebar");
       break;
     case "dark":
       $(".desktop").css("background-color", "#291c20");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "#7b7979");
       $(".menu").css("background", "#7b7979");
       $(".menu-content").css("background", "#7b7979");
@@ -147,47 +149,55 @@ function changeTheme(theme){
       break;
     case "rose-gold":
       $(".desktop").css("background-color", "#e6808c");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("rose-gold-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("rose-gold-menu-sidebar menu-sidebar");
       break;
     case "clouds":
       $(".desktop").css("background", "url('/static/images/backgrounds/clouds.jpg') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".title-bar").removeClass().addClass("clouds-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("clouds-menu-sidebar menu-sidebar");
       break;
     case "cybercity":
       $(".desktop").css("background", "url('/static/images/backgrounds/cybercity.gif') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("cybercity-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("cybercity-menu-sidebar menu-sidebar");
       break;
     case "cybernightcity":
       $(".desktop").css("background", "url('/static/images/backgrounds/cybernightcity.gif') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("cybernightcity-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("cybernightcity-menu-sidebar menu-sidebar");
       break;
     case "galaxy":
       $(".desktop").css("background", "url('/static/images/backgrounds/galaxy.gif') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("galaxy-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("galaxy-menu-sidebar menu-sidebar");
       break;
     case "xp":
       $(".desktop").css("background", "url('/static/images/backgrounds/xp.jpg') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("xp-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("xp-menu-sidebar menu-sidebar");
       break;
     case "doge":
       $(".desktop").css("background", "url('/static/images/backgrounds/doge.jpg') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("doge-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("doge-menu-sidebar menu-sidebar");
       break;
     case "star-wars":
       $(".desktop").css("background", "url('/static/images/backgrounds/starwars.gif') no-repeat");
+      $(".desktop").css("background-size", "cover");
       $(".startbar").css("background-color", "silver");
       $(".title-bar").removeClass().addClass("star-wars-title-bar title-bar");
       $(".menu-sidebar").removeClass().addClass("star-wars-menu-sidebar menu-sidebar");
